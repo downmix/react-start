@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hello react</title>
+</head>
+<body>
+  <div id="app">
+    <!-- view 랜더링 -->
+  </div>
+  <script src="react/build/react.js"></script>
+  <script src="react/build/react-dom.js"></script>
+  <script>
+    //app code
+    var TextAreaCounter = React.createClass({
+      propTypes:{
+        defaultValue: React.PropTypes.string,
+      },
+      getDefaultProps: function(){
+        return{
+          defaultValue: '',
+        }
+      },
+      getInitialState: function(){
+        return{
+          text: this.props.defaultValue,
+        };
+      },
+      _textChange: function(ev){
+        this.setState({
+          text: ev.target.value,
+        });
+      },
+      render: function(){
+        return React.DOM.div(null,
+          React.DOM.textarea({
+            value: this.state.text,
+            onChange: this._textChange,
+          }),
+          React.DOM.h3(null, this.state.text.length)
+        );
+      }
+    });
+
+    ReactDOM.render(
+      React.createElement(TextAreaCounter, {
+        //text: "bob"
+
+      }),
+      document.getElementById("app")
+    );
+  </script>
+  <scrip>
+
+</body>
+</html>

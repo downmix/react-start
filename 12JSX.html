@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+  <div id="app1"></div>
+  <div id="app2"></div>
+  <div id="app3"></div>
+  <div id="app4"></div>
+  <script src="react/build/react.js"></script>
+  <script src="react/build/react-dom.js"></script>
+  <script src="babel/browser.js"></script>
+  <script type="text/babel">
+    function log(event){
+      console.log(event.target.value);
+      console.log(event.target.defaultValue);
+    }
+
+    ReactDOM.render(
+      <textarea defaultValue="hello\nworld" onChange={log} />
+      ,
+      document.getElementById('app1')
+    );
+    ReactDOM.render(
+      <textarea defaultValue={"hello\nworld"} onChange={log} />
+      ,
+      document.getElementById('app2')
+    );
+    ReactDOM.render(
+      <textarea onChange={log}>hello
+      world
+      </textarea>
+      ,
+      document.getElementById('app3')
+    );
+    ReactDOM.render(
+      <textarea onChange={log}>{"hello\n\
+      world"}
+      </textarea>
+      ,
+      document.getElementById('app4')
+    );
+  </script>
+</body>
+</html>

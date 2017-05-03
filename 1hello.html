@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hello react</title>
+</head>
+<body>
+  <div id="app">
+    <!-- view 랜더링 -->
+  </div>
+  <script src="react/build/react.js"></script>
+  <script src="react/build/react-dom.js"></script>
+  <script>
+    //app code
+      ReactDOM.render(
+        //React.DOM.h1({id : "my-heading"}, "Hello world!"),
+        React.DOM.h1({id : "my-heading", className: "main-head", style: {color: "#eeeeee", background: "#777777"}},
+          React.DOM.span(null,
+            React.DOM.em(null, "HELL"),
+            "o "
+            ),
+          "world"
+        ),
+        document.getElementById("app")
+      );
+  </script>
+  <scrip>
+
+</body>
+</html>
